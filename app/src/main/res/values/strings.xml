@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">ChangePassword</string>
+    <string name="button_title">Change Password</string>
+
+    //Popup window strings
+    <string name="popup_title">Change Password</string>
+    <string name="popup_old">Current Password</string>
+    <string name="popup_new">New Password</string>
+    <string name="popup_confirm_new">Confirm New Password</string>
+    <string name="btn_confirm_text">Change</string>
+    <string name="btn_cancel_text">Cancel</string>
+
+    //Intro Screen
+    <string name="next_screen">Next</string>
+    <string name="get_started">Get Started</string>
+    <string name="skip">Skip</string>
+    <string name="navigation_drawer_open">open</string>
+    <string name="navigation_drawer_close">close</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

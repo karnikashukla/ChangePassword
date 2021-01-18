@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <files-path
+        name="myImage"
+        path="images" />
+    <external-files-path
+        name="external_files"
+        path="Android/data/data/com.changepassword/files/" />
+    <root-path
+        name="root"
+        path="." />
+</paths>

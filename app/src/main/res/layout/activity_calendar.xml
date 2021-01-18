@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <!--    <com.skyhope.eventcalenderlibrary.CalenderEvent-->
+    <!--        android:id="@+id/calendar"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="446dp" />-->
+
+    <!--    <View-->
+    <!--        android:id="@+id/divider2"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="2dp"-->
+    <!--        android:background="?android:attr/listDivider" />-->
+
+    <!--    <TextView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:id="@+id/event_data"-->
+    <!--        tools:ignore="MissingClass" />-->
+
+    <!--    <View-->
+    <!--        android:id="@+id/divider3"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="2dp"-->
+    <!--        android:background="?android:attr/listDivider" />-->
+
+
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="400dp"-->
+    <!--        android:orientation="horizontal"-->
+    <!--        android:layout_height="wrap_content">-->
+    <!--        <EditText-->
+    <!--            android:layout_width="270dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:id="@+id/add"-->
+    <!--            android:enabled="false"-->
+    <!--            android:visibility="invisible"-->
+    <!--            />-->
+    <!--        <com.google.android.material.button.MaterialButton-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:background="@color/purple_200"-->
+    <!--            android:text="Add"-->
+    <!--            android:id="@+id/btnAdd"-->
+    <!--            android:visibility="invisible"-->
+    <!--            />-->
+    <!--    </LinearLayout>-->
+
+    <Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        tools:targetApi="lollipop">
+
+        <TextView
+            android:id="@+id/text_today"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|right"
+            android:padding="10dp"
+            android:text="Today"
+            android:textColor="@android:color/white"
+            android:textSize="15dp" />
+    </Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:background="@drawable/layout_shape"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/layout_right"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Date"
+                    android:textSize="17dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_left"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+
+                    />
+                <!--                    android:background="@mipmap/your image" />-->
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+
+            />
+        <!--            android:background="@color/your color" />-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2">
+
+            <com.github.sundeepk.compactcalendarview.CompactCalendarView
+                android:id="@+id/compactcalendar_view"
+
+                android:layout_width="match_parent"
+                android:layout_height="320dp"
+                android:layout_margin="5dp"
+                app:compactCalendarBackgroundColor="@android:color/white"
+                app:compactCalendarTargetHeight="360dp"
+                app:compactCalendarTextColor="@android:color/black"
+                app:compactCalendarTextSize="15dp" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="?android:attr/listDivider" />
+
+        <TextView
+            android:id="@+id/event_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingClass" />
+
+        <View
+            android:id="@+id/divider3"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="?android:attr/listDivider" />
+
+        <LinearLayout
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/add"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:visibility="invisible" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAdd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/purple_200"
+                android:text="Add"
+                android:visibility="invisible" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

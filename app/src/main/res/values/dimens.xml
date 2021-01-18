@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="button_radius">20dp</dimen>
+    <dimen name="button_border_stroke_width">1dp</dimen>
+    <dimen name="button_height">60dp</dimen>
+    <dimen name="button_width">150dp</dimen>
+
+    //Popup Window
+    <dimen name="image_height">60dp</dimen>
+    <dimen name="image_width">60dp</dimen>
+    <dimen name="image_margin_bottom">20dp</dimen>
+    <dimen name="textView_margin_bottom">20dp</dimen>
+    <dimen name="edit_margin_bottom">20dp</dimen>
+    <dimen name="btn_margin_right">10dp</dimen>
+    <dimen name="textEdit_width">300dp</dimen>
+
+    //Intro Screen
+    <dimen name="button_width_intro">130dp</dimen>
+</resources>
