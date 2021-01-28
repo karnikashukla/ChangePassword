@@ -4,33 +4,41 @@
         <item
             android:id="@+id/home"
             android:icon="@drawable/ic_baseline_home_24"
-            android:title="Home" />
+            android:title="@string/home" />
         <item
             android:id="@+id/settings"
             android:icon="@drawable/ic_baseline_settings_24"
-            android:title="Settings" />
+            android:title="@string/settings" />
         <item
             android:id="@+id/calendar"
             android:icon="@drawable/ic_baseline_calendar_today_24"
-            android:title="Calendar" />
+            android:title="@string/calendar" />
     </group>
 
 
     <group android:id="@+id/group2">
         <item
-            android:id="@+id/profile"
+            android:id="@+id/work_with"
             android:icon="@drawable/ic_baseline_person_24"
-            android:title="Profile" />
+            android:title="@string/work_with" />
     </group>
+
+    <group android:id="@+id/group4">
+        <item
+            android:id="@+id/dar"
+            android:icon="@drawable/ic_baseline_view_day_24"
+            android:title="@string/dar_title" />
+    </group>
+
     <group android:id="@+id/group3">
         <item
             android:id="@+id/barchart"
             android:icon="@drawable/ic_baseline_bar_chart_24"
-            android:title="Bar Chart" />
+            android:title="@string/bar_chart" />
         <item
             android:id="@+id/piechart"
             android:icon="@drawable/ic_baseline_pie_chart_24"
-            android:title="Pie Chart" />
+            android:title="@string/pie_chart" />
     </group>
 
 </menu>

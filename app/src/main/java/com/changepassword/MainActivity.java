@@ -32,6 +32,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.changepassword.DAR.DarMainActivity;
 import com.google.android.material.navigation.NavigationView;
 
 import java.io.File;
@@ -78,12 +79,21 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @SuppressLint("NonConstantResourceId")
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.calendar:
                         Intent cal = new Intent(MainActivity.this, CalendarViewActivity.class);
                         startActivity(cal);
+                        break;
+                    case R.id.work_with:
+                        Intent work = new Intent(MainActivity.this, WorkWithActivity.class);
+                        startActivity(work);
+                        break;
+                    case R.id.dar:
+                        Intent dar = new Intent(MainActivity.this, DarMainActivity.class);
+                        startActivity(dar);
                         break;
                     case R.id.barchart:
                         Fragment fragment = new BarChartFragment(MainActivity.this);
@@ -301,6 +311,4 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
-
 }

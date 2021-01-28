@@ -12,6 +12,9 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="windowActionModeOverlay">true</item>
+        <item name="actionModeBackground">@color/purple_200</item>
+        <item name="actionModeStyle">@style/Theme.MaterialComponents.Light.NoActionBar</item>
     </style>
 
     <style name="myDatePicker" parent="Theme.MaterialComponents.Light.NoActionBar">
@@ -19,4 +22,8 @@
         <item name="android:datePickerDialogTheme" tools:targetApi="lollipop">@color/purple_200
         </item>
     </style>
+
+    <style name="bottomNavigationText.Active">17sp</style>
+
+    <style name="bottomNavigationText">15sp</style>
 </resources>

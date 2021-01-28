@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
+    android:id="@+id/fragment_container"
     android:orientation="vertical">
 
     <!--    <com.skyhope.eventcalenderlibrary.CalenderEvent-->
@@ -56,7 +57,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimary"
+        android:background="@color/purple_200"
         tools:targetApi="lollipop">
 
         <TextView
@@ -68,13 +69,19 @@
             android:text="Today"
             android:textColor="@android:color/white"
             android:textSize="15dp" />
+
     </Toolbar>
+
+    <!--    <com.github.ik024.calendar_lib.custom.MonthView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"/>-->
+
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="10dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/layout_shape"
+        android:layout_margin="10dp"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -84,13 +91,24 @@
             android:gravity="center"
             android:orientation="horizontal">
 
+            <!--            <LinearLayout-->
+            <!--                android:id="@+id/layout_right"-->
+            <!--                android:layout_width="40dp"-->
+            <!--                android:layout_height="match_parent"-->
+            <!--                android:gravity="center"-->
+            <!--                android:orientation="vertical">-->
+
+            <!--            </LinearLayout>-->
             <LinearLayout
-                android:id="@+id/layout_right"
+                android:id="@+id/left"
                 android:layout_width="40dp"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="vertical">
+                android:gravity="center">
 
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_baseline_arrow_back_ios_new_24" />
             </LinearLayout>
 
             <LinearLayout
@@ -100,17 +118,18 @@
                 android:gravity="center">
 
                 <TextView
-                    android:id="@+id/text"
+                    android:id="@+id/text_current_month"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="Date"
+                    android:clickable="true"
                     android:textSize="17dp"
                     android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/layout_left"
+                android:id="@+id/right"
                 android:layout_width="40dp"
                 android:layout_height="match_parent"
                 android:gravity="center">
@@ -118,9 +137,8 @@
                 <ImageView
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-
+                    android:src="@drawable/ic_baseline_arrow_forward_ios_24"
                     />
-                <!--                    android:background="@mipmap/your image" />-->
             </LinearLayout>
         </LinearLayout>
 
@@ -132,59 +150,117 @@
         <!--            android:background="@color/your color" />-->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="0.2">
 
             <com.github.sundeepk.compactcalendarview.CompactCalendarView
                 android:id="@+id/compactcalendar_view"
-
                 android:layout_width="match_parent"
-                android:layout_height="320dp"
+                android:layout_height="300dp"
                 android:layout_margin="5dp"
-                app:compactCalendarBackgroundColor="@android:color/white"
-                app:compactCalendarTargetHeight="360dp"
+                app:compactCalendarCurrentSelectedDayIndicatorStyle="fill_large_indicator"
+                app:compactCalendarEventIndicatorStyle="small_indicator"
+                app:compactCalendarMultiEventIndicatorColor="@color/purple_500"
+                app:compactCalendarTargetHeight="300dp"
                 app:compactCalendarTextColor="@android:color/black"
                 app:compactCalendarTextSize="15dp" />
         </LinearLayout>
 
-        <View
-            android:id="@+id/divider2"
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="?android:attr/listDivider" />
+        <!--        <View-->
+        <!--            android:id="@+id/divider2"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="2dp"-->
+        <!--            android:background="?android:attr/listDivider" />-->
 
-        <TextView
-            android:id="@+id/event_data"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:ignore="MissingClass" />
+        <!--        <TextView-->
+        <!--            android:id="@+id/event_data"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            tools:ignore="MissingClass" />-->
 
-        <View
-            android:id="@+id/divider3"
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="?android:attr/listDivider" />
+        <!--        <View-->
+        <!--            android:id="@+id/divider3"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="2dp"-->
+        <!--            android:background="?android:attr/listDivider" />-->
 
-        <LinearLayout
-            android:layout_width="400dp"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+        <!--        <LinearLayout-->
+        <!--            android:layout_width="400dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:orientation="horizontal">-->
 
-            <EditText
-                android:id="@+id/add"
-                android:layout_width="270dp"
-                android:layout_height="wrap_content"
-                android:enabled="false"
-                android:visibility="invisible" />
+        <!--            <EditText-->
+        <!--                android:id="@+id/add"-->
+        <!--                android:layout_width="270dp"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:enabled="false"-->
+        <!--                android:visibility="invisible" />-->
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnAdd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/purple_200"
-                android:text="Add"
-                android:visibility="invisible" />
-        </LinearLayout>
+        <!--            <com.google.android.material.button.MaterialButton-->
+        <!--                android:id="@+id/btnAdd"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:background="@color/purple_200"-->
+        <!--                android:text="Add"-->
+        <!--                android:visibility="invisible" />-->
+        <!--        </LinearLayout>-->
     </LinearLayout>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp">
+
+        <ListView
+            android:id="@+id/event_list"
+            android:layout_height="wrap_content"
+            android:footerDividersEnabled="true"
+            android:layout_width="match_parent"
+            android:headerDividersEnabled="true" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/float_add"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_gravity="end"
+                android:backgroundTint="@color/purple_200"
+                android:onClick="goForTour"
+                android:src="@drawable/ic_baseline_add_24"
+                app:fabSize="mini"
+                app:layout_constraintBottom_toTopOf="@id/float_copy"
+                app:layout_constraintEnd_toEndOf="@id/float_copy"
+                app:layout_constraintStart_toStartOf="@id/float_copy"
+                tools:ignore="MissingConstraints,NotSibling" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/float_copy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:backgroundTint="@color/purple_200"
+                android:src="@drawable/ic_baseline_content_copy_24"
+                app:fabSize="mini"
+                app:layout_constraintBottom_toTopOf="@id/float_delete"
+                app:layout_constraintEnd_toEndOf="@id/float_delete"
+                app:layout_constraintStart_toStartOf="@id/float_delete"
+                tools:ignore="MissingConstraints,NotSibling" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/float_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:backgroundTint="@color/purple_200"
+                android:src="@drawable/ic_baseline_delete_24"
+                app:fabSize="mini"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="MissingConstraints" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
 </LinearLayout>

@@ -15,7 +15,21 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:largeHeap="true"
         android:theme="@style/Theme.ChangePassword">
+        <activity android:name=".DAR.RecordDetailsActivity"></activity>
+        <activity android:name=".DAR.RecordHistoryActivity" />
+        <activity android:name=".DAR.ProductDetalingActivity" />
+        <activity android:name=".DAR.RecordDetailActivity" />
+        <activity android:name=".DAR.WorkWithSelectionActivity" />
+        <activity android:name=".DAR.CustomerSelectionActivity" />
+        <activity android:name=".WorkWithActivity" />
+        <activity android:name=".CustomerSelectionActivity" />
+        <activity android:name=".MTPCopyActivity" />
+        <activity android:name=".FieldWorkListActivity" />
+        <activity android:name=".MainFieldOrOtherActivity" />
+        <activity android:name=".FieldWorkActivity" />
+        <activity android:name=".TourPlanActivity" />
         <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity" />
         <activity android:name=".IntroScreen">
             <intent-filter>
@@ -24,8 +38,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".CalendarViewActivity" />
+        <activity android:name=".DAR.DarMainActivity" />
+        <activity android:name=".DAR.WorkTypeActivity" />
+        <activity android:name=".DAR.ProductListDetalingActivity" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -38,4 +55,5 @@
                 android:resource="@xml/file_path" />
         </provider>
     </application>
+
 </manifest>

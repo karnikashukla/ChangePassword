@@ -18,4 +18,128 @@
     <string name="navigation_drawer_close">close</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    //Tour Plan
+    <string name="tour_title">Tour Plan</string>
+    <string name="no_record">No Records Found!</string>
+    <string name="field_work">Field Work</string>
+    <string name="field_work_next_button">Next</string>
+    <string name="other_work">Other Work</string>
+    <string name="customer_selection_add_TV">Selected Customer</string>
+    <string name="customer_selection_add_button">Add</string>
+
+    <string-array name="base_route">
+        <item>Select Base Route</item>
+        <item>Ahmedabad-Vadodara-Ahmedabad</item>
+        <item>Ahmedabad-Surat-Ahmedabad</item>
+        <item>Vadodara-Surat-Vadodara</item>
+    </string-array>
+    <string-array name="cities">
+        <item>Select City</item>
+        <item>Ahmedabad</item>
+        <item>Vadodara</item>
+        <item>Surat</item>
+    </string-array>
+    <string-array name="employees">
+        <item>Select Employee</item>
+        <item>IITS-001</item>
+        <item>IITS-002</item>
+        <item>IITS-003</item>
+        <item>IITS-004</item>
+    </string-array>
+    <string-array name="customer_type">
+        <item>Select Customer Type</item>
+        <item>Doctor</item>
+        <item>Chemist</item>
+        <item>Engineer</item>
+    </string-array>
+    <string-array name="customers">
+        <item>Doctor</item>
+        <item>Chemist</item>
+    </string-array>
+    <string-array name="employee_type">
+        <item>Select Employee</item>
+        <item>Employee 1</item>
+        <item>Employee 1</item>
+        <item>Employee 1</item>
+    </string-array>
+
+    <string-array name="selectField">
+        <item>Field Work</item>
+        <item>Other Work</item>
+    </string-array>
+    <string-array name="reason">
+        <item>Select Reason Type</item>
+        <item>Meeting</item>
+        <item>On leave</item>
+        <item>Office Work</item>
+    </string-array>
+    <string name="remark">Remark</string>
+    <string name="search_hint">Search...</string>
+
+    //Calendar detail Popup
+    <string name="field_work_tv">Field Work</string>
+    <string name="class_tv">Class</string>
+    <string name="work_with_tv">Worked With</string>
+    <string name="rate">Rate</string>
+
+    //MTP Copy
+    <string name="date_tv">Date</string>
+    <string name="select_all">Select All</string>
+    <string name="work_selection">Work Selection</string>
+    <string name="work_with">Work With</string>
+    <string name="bar_chart">Bar Chart</string>
+    <string name="pie_chart">Pie Chart</string>
+    <string name="calendar">Calendar</string>
+    <string name="settings">Settings</string>
+    <string name="home">Home</string>
+    <string name="dar_title">Daily Activity Report</string>
+    <string name="unlock_request_title">Unlock Request</string>
+    <string name="unlock_warning">Dar is locked due to late reporting! Are you sure you want to submit unlock request?</string>
+    <string name="unlock_reason">Reason</string>
+    <string name="unlock_false">No</string>
+    <string name="unlock_true">Yes</string>
+    <string name="customer_selection_title">Customer Selection</string>
+    <string name="filter_apply">Apply</string>
+    <string name="doctor">Doctor</string>
+    <string name="chemist">Chemist</string>
+    <string name="other_work_next">Next</string>
+    <string name="work_with_previous">Previous</string>
+    <string name="work_with_next">Next</string>
+    <string name="draft_report_string">Draft Report</string>
+    <string name="record_activity_detail_text">Record Activity Detail</string>
+    <string name="product_detail_title">Product Detail</string>
+    <string name="promotional_material_title">Promotional Material</string>
+    <string name="remark1">Remark</string>
+    <string name="add_more">Add More</string>
+    <string name="done">Done</string>
+    <string name="record_activity_history_title">Record Activity History</string>
+    <string name="record_activity_details">Record Activity Details</string>
+    <string name="pob">POB</string>
+    <string name="is_missed">is missed</string>
+    <string name="product_group_name">Product Group Name</string>
+    <string name="product_quantity">Product Quantity</string>
+    <string name="monthly_potential">Monthly Potential</string>
+    <string name="product_pob">Product POB</string>
+    <string name="add">Add</string>
+    <string name="close">Close</string>
+    <string name="add_update_remark">Add/Update Remark</string>
+    <string name="is_missed_popup_text">Do you also want to miss below list?</string>
+    <string name="save">Save</string>
+
+    //Product Detail Screen
+    <string-array name="products">
+        <item>Select Product</item>
+        <item>Product 1</item>
+        <item>Product 2</item>
+        <item>Product 3</item>
+        <item>Product 4</item>
+        <item>Product 5</item>
+        <item>Product 6</item>
+    </string-array>
+
+    <string-array name="promotional_material">
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
 </resources>

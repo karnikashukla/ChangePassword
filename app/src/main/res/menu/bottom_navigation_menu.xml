@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/doctor"
+        android:icon="@drawable/ic_baseline_medical_services_24"
+        android:title="@string/doctor" />
+    <item
+        android:id="@+id/chemist"
+        android:icon="@drawable/ic_baseline_medical_services_24"
+        android:title="@string/chemist" />
+</menu>
