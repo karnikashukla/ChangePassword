@@ -49,6 +49,7 @@ public class DarMainActivity extends AppCompatActivity {
     public static final String[] subtitle = {"Location A", "Location B", "Location C"};
     public static Calendar myCalendar;
     public static int currentYear;
+    public static String monthName;
     public static Date dateFromUser;
     public static String dateString, city, name;
     public static String listFrom = "Dar";
@@ -74,7 +75,8 @@ public class DarMainActivity extends AppCompatActivity {
     List<Integer> months = new ArrayList<Integer>(Arrays.asList(month));
     Integer[] year = {2020, 2020, 2018, 2018, 2018};
     List<Integer> years = new ArrayList<Integer>(Arrays.asList(year));
-    int yearNumber, monthNumber;
+    public static int monthNumber;
+    int yearNumber;
     ListView listView;
     List<ListModel> listModels;
     List<RecordDetailListModel> recordModel;
@@ -210,7 +212,7 @@ public class DarMainActivity extends AppCompatActivity {
     private void swipe() {
         LayoutInflater inflater = getLayoutInflater();
         View view = inflater.inflate(R.layout.list_item_dar, listView, false);
-        swipeLayout = (SwipeLayout) view.findViewById(R.id.swipe_layout);
+        swipeLayout = view.findViewById(R.id.swipe_layout);
         setSwipeViewFeatures();
     }
 
@@ -325,7 +327,10 @@ public class DarMainActivity extends AppCompatActivity {
         simpleDateFormat = new SimpleDateFormat("MMMM");
         tx_date.setText(simpleDateFormat.format(date) + " , " + yearFormat.format(date));
         currentYear = Integer.parseInt(yearFormat.format(date));
+        monthName = simpleDateFormat.format(date);
+        monthNumber = Integer.parseInt((new SimpleDateFormat("M").format(date)));
         Log.d("year", String.valueOf(currentYear));
+        Log.d("year", String.valueOf(monthNumber));
     }
 
     //variable initialization

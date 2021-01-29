@@ -28,6 +28,10 @@
             android:id="@+id/dar"
             android:icon="@drawable/ic_baseline_view_day_24"
             android:title="@string/dar_title" />
+        <item
+            android:id="@+id/route"
+            android:icon="@drawable/ic_placeholder"
+            android:title="@string/route" />
     </group>
 
     <group android:id="@+id/group3">

@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.changepassword.R;
 
-import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
@@ -58,14 +57,14 @@ public class MonthAdapter extends RecyclerView.Adapter<MonthAdapter.ViewHolder> 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             monthName = itemView.findViewById(R.id.months);
-
+            final int[] i = {DarMainActivity.currentYear};
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     int pos = getAdapterPosition();
                     String month_name = month.get(pos);
                     // Toast.makeText(view.getContext(), month_name + CardFragment.yearNumber, Toast.LENGTH_SHORT).show();
-                    Date date = new GregorianCalendar(CardFragment.yearNumber, pos, 1).getTime();
+                    Date date = new GregorianCalendar(i[0], pos, 1).getTime();
                     //  CalendarViewActivity calendarViewActivity = new CalendarViewActivity();
 
                     String flag = CardFragment.flag;
@@ -73,12 +72,11 @@ public class MonthAdapter extends RecyclerView.Adapter<MonthAdapter.ViewHolder> 
                         ((DarMainActivity) context).setCalendar(date);
                     } else {
                         CardFragment.flag = "month";
-                        int i = Integer.parseInt(month.get(pos));
-                        DarMainActivity.currentYear = i;
-                        Date date1 = new GregorianCalendar(i, Calendar.JANUARY, 1).getTime();
+                        i[0] = Integer.parseInt(month.get(pos));
+                        DarMainActivity.currentYear = i[0];
+                        Date date1 = new GregorianCalendar(i[0], DarMainActivity.monthNumber - 1, 1).getTime();
                         ((DarMainActivity) context).setCalendar(date1);
                     }
-
                     com.changepassword.DAR.CardFragment.bottom.dismiss();
                 }
             });

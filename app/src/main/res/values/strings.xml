@@ -40,6 +40,24 @@
         <item>Vadodara</item>
         <item>Surat</item>
     </string-array>
+    <string-array name="start_cities">
+        <item>Start City</item>
+        <item>Ahmedabad</item>
+        <item>Vadodara</item>
+        <item>Surat</item>
+    </string-array>
+    <string-array name="end_cities">
+        <item>End City</item>
+        <item>Ahmedabad</item>
+        <item>Vadodara</item>
+        <item>Surat</item>
+    </string-array>
+    <string-array name="transport">
+        <item>Transport Type</item>
+        <item>Bus</item>
+        <item>Train</item>
+        <item>Flight</item>
+    </string-array>
     <string-array name="employees">
         <item>Select Employee</item>
         <item>IITS-001</item>
@@ -74,6 +92,13 @@
         <item>On leave</item>
         <item>Office Work</item>
     </string-array>
+    <string-array name="position">
+        <item>Select Position</item>
+        <item>Intern</item>
+        <item>Junior</item>
+        <item>Senior</item>
+    </string-array>
+
     <string name="remark">Remark</string>
     <string name="search_hint">Search...</string>
 
@@ -126,6 +151,18 @@
     <string name="add_update_remark">Add/Update Remark</string>
     <string name="is_missed_popup_text">Do you also want to miss below list?</string>
     <string name="save">Save</string>
+    <string name="base_route">Base Route</string>
+    <string name="todo">TODO</string>
+    <string name="route">Route</string>
+    <string name="route_submission">Route Submission</string>
+    <string name="cover_city">Cover City</string>
+    <string name="submit">Submit</string>
+    <string name="fare_details">Fare Details</string>
+    <string name="no_of_ways">No. of ways</string>
+    <string name="allowance_type">Allowance Type</string>
+    <string name="allowance_amount">Allowance Amount</string>
+    <string name="fare">Fare</string>
+    <string name="get_fare">Get Fare</string>
 
     //Product Detail Screen
     <string-array name="products">

@@ -32,6 +32,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.changepassword.DAR.BaseRouteActivity;
 import com.changepassword.DAR.DarMainActivity;
 import com.google.android.material.navigation.NavigationView;
 
@@ -94,6 +95,10 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.dar:
                         Intent dar = new Intent(MainActivity.this, DarMainActivity.class);
                         startActivity(dar);
+                        break;
+                    case R.id.route:
+                        Intent route = new Intent(MainActivity.this, BaseRouteActivity.class);
+                        startActivity(route);
                         break;
                     case R.id.barchart:
                         Fragment fragment = new BarChartFragment(MainActivity.this);
