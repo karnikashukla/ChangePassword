@@ -118,8 +118,10 @@ public class DarMainActivity extends AppCompatActivity {
         setCalendarView();
         calendarlistener();
         swipe();
+
         yearNumber = myCalendar.get(Calendar.YEAR);
         monthNumber = myCalendar.get(Calendar.MONTH) + 1;
+
         tx_date.setText("" + formattedDate);
         currentYear = yearNumber;
 
@@ -149,25 +151,25 @@ public class DarMainActivity extends AppCompatActivity {
             @SuppressLint({"SetTextI18n", "SimpleDateFormat"})
             @Override
             public void onClick(View v) {
-                monthNumber = monthNumber + 1;
+//                if (monthNumber > 12) {
+//                    monthNumber = 1;
+//                    yearNumber = yearNumber + 1;
+//                    yearFormat = new SimpleDateFormat("YYYY");
+//                    tx_date.setText(Month.of(monthNumber) + " , " + yearFormat.format(c));
+//                    Date date = new GregorianCalendar(yearNumber, monthNumber, 1).getTime();
+//                    setCalendar(date);
+//            } else {
+                yearFormat = new SimpleDateFormat("YYYY");
+                tx_date.setText(Month.of(monthNumber) + " , " + yearFormat.format(c));
+                Date date = new GregorianCalendar(currentYear, monthNumber, 1).getTime();
+
+                setCalendar(date);
+//                    monthNumber++;
                 if (monthNumber > 12) {
                     monthNumber = 1;
-                    yearNumber = yearNumber + 1;
-                    yearFormat = new SimpleDateFormat("YYYY");
-                    tx_date.setText(Month.of(monthNumber) + " , " + yearFormat.format(c));
-                    Date date = new GregorianCalendar(yearNumber, monthNumber, 1).getTime();
-                    setCalendar(date);
-                    Setdate();
-                    currentYear = yearNumber;
-                    //                    Toast.makeText(CalendarViewActivity.this, "No Data Available", Toast.LENGTH_SHORT).show();
-                } else {
-                    yearFormat = new SimpleDateFormat("YYYY");
-                    tx_date.setText(Month.of(monthNumber) + " , " + yearFormat.format(c));
-                    Date date = new GregorianCalendar(yearNumber, monthNumber, 1).getTime();
-                    setCalendar(date);
-//                    monthNumber = monthNumber + 1;
-                    Setdate();
+                    currentYear = currentYear + 1;
                 }
+//             }
             }
         });
 
@@ -176,29 +178,47 @@ public class DarMainActivity extends AppCompatActivity {
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View v) {
-                monthNumber = monthNumber - 1;
-                if (monthNumber < 1) {
-                    monthNumber = 12;
-                    yearNumber = yearNumber - 1;
-                    yearFormat = new SimpleDateFormat("YYYY");
-                    tx_date.setText(Month.of(monthNumber) + " , " + yearFormat.format(c));
-                    Date date = new GregorianCalendar(yearNumber, monthNumber, 1).getTime();
-                    setCalendar(date);
-                    Setdate();
-                    //      monthNumber = 12;
-                    //  yearNumber = yearNumber - 1;
-                    //    currentYear = yearNumber;
-
-//                    Toast.makeText(CalendarViewActivity.this, "No Data Available", Toast.LENGTH_SHORT).show();
-                } else {
-                    yearFormat = new SimpleDateFormat("YYYY");
-                    tx_date.setText(Month.of(monthNumber) + " , " + yearFormat.format(c));
-                    Date date = new GregorianCalendar(yearNumber, monthNumber, 1).getTime();
-                    setCalendar(date);
+//                if (monthNumber < 1) {
+//                    monthNumber = 12;
+//                    yearNumber = yearNumber - 1;
+//                    yearFormat = new SimpleDateFormat("YYYY");
+//                    tx_date.setText(Month.of(monthNumber) + " , " + yearFormat.format(c));
+//                    Date date = new GregorianCalendar(yearNumber, monthNumber, 1).getTime();
+//                    setCalendar(date);
+////                    Setdate();
+//                    //      monthNumber = 12;
+//                    //  yearNumber = yearNumber - 1;
+//                    //    currentYear = yearNumber;
+//
+////                    Toast.makeText(CalendarViewActivity.this, "No Data Available", Toast.LENGTH_SHORT).show();
+//                } else {
+////                    monthNumber = monthNumber - 1;
+//                    yearFormat = new SimpleDateFormat("YYYY");
+//                    tx_date.setText(Month.of(monthNumber) + " , " + yearFormat.format(c));
+//                    Date date = new GregorianCalendar(yearNumber, monthNumber, 1).getTime();
+//                    setCalendar(date);
 //                    monthNumber = monthNumber - 1;
-                    Setdate();
-                }
-
+////                    Setdate();
+//                }
+//                monthNumber = monthNumber-1;
+//                System.out.println(monthNumber);
+//                if (monthNumber < 1){
+//                    System.out.println("In if month<1");
+//                    monthNumber=12;
+//                    currentYear = currentYear-1;
+//                    yearFormat = new SimpleDateFormat("YYYY");
+//                    tx_date.setText(Month.of(monthNumber) + " , " + yearFormat.format(c));
+//                    Date date = new GregorianCalendar(currentYear, monthNumber, 1).getTime();
+//                    setCalendar(date);
+//                }else{
+//                    yearFormat = new SimpleDateFormat("YYYY");
+//                    tx_date.setText(Month.of(monthNumber) + " , " + yearFormat.format(c));
+//                    Date date = new GregorianCalendar(currentYear, monthNumber, 1).getTime();
+//                    setCalendar(date);
+//                }
+                Date date = new GregorianCalendar(currentYear, monthNumber, 1).getTime();
+                //onMonthScroll(date);
+                preMonth(date);
             }
         });
 
@@ -288,37 +308,10 @@ public class DarMainActivity extends AppCompatActivity {
             listFrom = "Dar";
             listAdapter.notifyDataSetChanged();
         }
-
-//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @SuppressLint("ClickableViewAccessibility")
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                LayoutInflater inflater = (LayoutInflater) view.getContext().getSystemService(view.getContext().LAYOUT_INFLATER_SERVICE);
-//                @SuppressLint("InflateParams") View popupView = inflater.inflate(R.layout.dar_list_item_details, null);
-//                int height = 600;
-//                int width = 1000;
-//                TextView title = popupView.findViewById(R.id.popup_title);
-//                ImageView cancel = popupView.findViewById(R.id.cancel);
-//                TextView date = popupView.findViewById(R.id.date);
-//                title.setText(listModels.get(i).getTitle());
-//                date.setText(dateString);
-//                PopupWindow popupWindow = new PopupWindow(popupView, width, height, true);
-//                popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
-//                popupView.setOnTouchListener((view1, motionEvent) -> {
-//                    popupWindow.dismiss();
-//                    return true;
-//                });
-//                cancel.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View view) {
-//                        popupWindow.dismiss();
-//                    }
-//                });
-//            }
-//        });
     }
 
     //Setting calendar
+    @SuppressLint({"SimpleDateFormat", "SetTextI18n"})
     public void setCalendar(Date date) {
 //        Toast.makeText(CalendarViewActivity.this, "CalendarViewActivity", Toast.LENGTH_SHORT).show();
         compactCalendarView.setCurrentDate(date);
@@ -327,8 +320,9 @@ public class DarMainActivity extends AppCompatActivity {
         simpleDateFormat = new SimpleDateFormat("MMMM");
         tx_date.setText(simpleDateFormat.format(date) + " , " + yearFormat.format(date));
         currentYear = Integer.parseInt(yearFormat.format(date));
-        monthName = simpleDateFormat.format(date);
+//        monthName = simpleDateFormat.format(date);
         monthNumber = Integer.parseInt((new SimpleDateFormat("M").format(date)));
+
         Log.d("year", String.valueOf(currentYear));
         Log.d("year", String.valueOf(monthNumber));
     }
@@ -405,19 +399,31 @@ public class DarMainActivity extends AppCompatActivity {
             @SuppressLint({"SimpleDateFormat", "SetTextI18n"})
             @Override
             public void onMonthScroll(Date firstDayOfNewMonth) {
-                compactCalendarView.removeAllEvents();
-                Setdate();
-                yearFormat = new SimpleDateFormat("YYYY");
-                simpleDateFormat = new SimpleDateFormat("MMMM");
-                tx_date.setText(simpleDateFormat.format(firstDayOfNewMonth) + " , " + yearFormat.format(firstDayOfNewMonth));
-//                tx_date.setText(dateFormatForMont.format(firstDayOfNewMonth));
-                currentYear = firstDayOfNewMonth.getYear();
-                formattedDate = simpleDateFormat.format(firstDayOfNewMonth) + " , " + yearFormat.format(firstDayOfNewMonth);
+//                compactCalendarView.removeAllEvents();
+//                Setdate();
+//                yearFormat = new SimpleDateFormat("YYYY");
+//                simpleDateFormat = new SimpleDateFormat("MMMM");
+//                tx_date.setText(simpleDateFormat.format(firstDayOfNewMonth) + " , " + yearFormat.format(firstDayOfNewMonth));
+////                tx_date.setText(dateFormatForMont.format(firstDayOfNewMonth));
+//                currentYear = firstDayOfNewMonth.getYear();
+//                formattedDate = simpleDateFormat.format(firstDayOfNewMonth) + " , " + yearFormat.format(firstDayOfNewMonth);
+                preMonth(firstDayOfNewMonth);
             }
         });
 
     }
 
+    public void preMonth(Date firstDayOfNewMonth) {
+        compactCalendarView.removeAllEvents();
+        Setdate();
+        yearFormat = new SimpleDateFormat("YYYY");
+        simpleDateFormat = new SimpleDateFormat("MMMM");
+        tx_date.setText(simpleDateFormat.format(firstDayOfNewMonth) + " , " + yearFormat.format(firstDayOfNewMonth));
+//                tx_date.setText(dateFormatForMont.format(firstDayOfNewMonth));
+        currentYear = firstDayOfNewMonth.getYear();
+        formattedDate = simpleDateFormat.format(firstDayOfNewMonth) + " , " + yearFormat.format(firstDayOfNewMonth);
+
+    }
     //get current date
 
     @SuppressLint("SimpleDateFormat")
@@ -431,6 +437,8 @@ public class DarMainActivity extends AppCompatActivity {
         myCalendar = Calendar.getInstance();
 //        monthNumber = monthNumber + 1;
         currentYear = c.getYear();
+        monthNumber = Integer.parseInt((new SimpleDateFormat("M").format(c)));
+
     }
 
     @SuppressLint("SimpleDateFormat")

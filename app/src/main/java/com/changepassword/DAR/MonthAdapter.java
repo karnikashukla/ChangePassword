@@ -77,6 +77,8 @@ public class MonthAdapter extends RecyclerView.Adapter<MonthAdapter.ViewHolder> 
                         Date date1 = new GregorianCalendar(i[0], DarMainActivity.monthNumber - 1, 1).getTime();
                         ((DarMainActivity) context).setCalendar(date1);
                     }
+
+                    notifyDataSetChanged();
                     com.changepassword.DAR.CardFragment.bottom.dismiss();
                 }
             });
