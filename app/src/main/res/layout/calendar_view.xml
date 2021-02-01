@@ -72,6 +72,7 @@
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:layout_margin="5dp"
+            app:compactCalendarCurrentSelectedDayBackgroundColor="@color/maroon"
             app:compactCalendarCurrentSelectedDayIndicatorStyle="fill_large_indicator"
             app:compactCalendarEventIndicatorStyle="small_indicator"
             app:compactCalendarMultiEventIndicatorColor="@color/purple_500"
